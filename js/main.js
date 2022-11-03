@@ -32,6 +32,22 @@ function getRndInteger(min, max) {
 // MAIN -------
 
 const playBtn = document.getElementById("play-btn")
+const arr = [];
+
+let i = 0;
+
+while (arr.length < 16) {
+    const bombNumber = getRndInteger(1, 100);
+    if( !arr.includes(bombNumber)){
+        arr.push(bombNumber); 
+    }
+    
+    
+    i++; 
+}
+
+console.log(arr)
+
 
 playBtn.addEventListener("click", function(){
     
@@ -45,6 +61,7 @@ playBtn.addEventListener("click", function(){
         nCells = 49;
     }
     
+    
     for (let i = 1; i <= nCells; i++) {
         const boardCell = document.createElement("div");
         const boardContainer = document.getElementById("container");
@@ -53,27 +70,21 @@ playBtn.addEventListener("click", function(){
         boardCell.classList.add("cell-grid")
         boardContainer.append(boardCell)
         boardCell.addEventListener("click", function(){
-            console.log(this.innerHTML)
-            this.classList.add("blue-bg")
+            if(arr.includes(i)){
+            this.classList.add("bomb");
+            alert("hai perso") }
+            else if (!arr.includes(i)){
+            this.classList.add("blue-bg");
+               
+            }
         })
     }
 });
 
-const arr = [];
 
-let i = 0;
 
-while (i < 17) {
-    const bomb = getRndInteger(1, 100)
-    if( !arr.includes(bomb)){
-        arr.push(bomb); 
-    }
-    
-    
-    i++;
-}
 
-console.log(arr)
+
 
 
 
