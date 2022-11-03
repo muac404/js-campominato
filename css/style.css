@@ -1,0 +1,78 @@
+/* RESET */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* MAIN */
+
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex-grow: 1;
+    background-color: #7fffd4;
+    position: relative;
+    
+}
+header{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h5{
+    font-weight: 500;
+}
+
+.play-btn{
+    padding: 1px 20px;
+    cursor: pointer;
+}
+
+footer{
+    padding: 10px;
+}
+
+.grid{
+    
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.cell-grid{
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.blue-bg{
+    background-color: lightblue;
+}
+.left-sidebar{
+    display: flex;
+    align-items: center;
+}
+.left-sidebar img{
+    
+    max-width: 60px;
+}
+
