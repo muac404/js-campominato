@@ -1,6 +1,7 @@
 "use strict"
 
 // FUNCTIONS
+
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
@@ -66,15 +67,26 @@ playBtn.addEventListener("click", function(){
         const boardCell = document.createElement("div");
         const boardContainer = document.getElementById("container");
         
+        
         boardCell.innerHTML = i
         boardCell.classList.add("cell-grid")
         boardContainer.append(boardCell)
+       
+        let score = 0
+        
+
         boardCell.addEventListener("click", function(){
             if(arr.includes(i)){
             this.classList.add("bomb");
-            alert("hai perso") }
+            alert("Hai preso una bomba! Ricarica la pagina per giocare di nuovo") }
             else if (!arr.includes(i)){
             this.classList.add("blue-bg");
+            let totalScore = score + 1
+            console.log(totalScore)
+            const scoreContainer = document.getElementById("score");
+            const scoreCell = document.createElement("div");
+
+
                
             }
         })
